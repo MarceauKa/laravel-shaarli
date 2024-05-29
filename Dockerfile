@@ -1,10 +1,10 @@
 FROM alpine
 
 RUN apk update && apk upgrade \
-    && apk add --no-cache php82 php82-mbstring php82-xml php82-pdo php82-mysqli php82-bcmath php82-ctype php82-zip \
-    php82-imap php82-curl php82-json php82-gettext php82-gd php82-session php82-snmp php82-pdo_mysql php82-tokenizer \
-    php82-openssl php82-sockets php82-fileinfo php82-dom php82-exif php82-simplexml php82-xmlwriter php82-xmlreader\
-    php82-sqlite3 php82-pdo_sqlite php82-pcntl php82-gd php82-iconv php82-phar composer nodejs php82-apache2 apache2 npm git python3 ca-certificates \
+    && apk add --no-cache php83 php83-mbstring php83-xml php83-pdo php83-mysqli php83-bcmath php83-ctype php83-zip \
+    php83-imap php83-curl php83-json php83-gettext php83-gd php83-session php83-snmp php83-pdo_mysql php83-tokenizer \
+    php83-openssl php83-sockets php83-fileinfo php83-dom php83-exif php83-simplexml php83-xmlwriter php83-xmlreader\
+    php83-sqlite3 php83-pdo_sqlite php83-pcntl php83-gd php83-iconv php83-phar composer nodejs php83-apache2 apache2 npm git python3 ca-certificates \
     curl ffmpeg chromium ttf-freefont font-noto-emoji  \
     && curl -Lo /usr/bin/yt-dlp https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp \
     && chmod a+rx /usr/bin/yt-dlp \
@@ -35,6 +35,7 @@ RUN find . -type f -exec chmod 664 {} \; \
     && npm run production  \
     && php artisan optimize \
     && php artisan view:clear \
+    && php artisan config:clear \
     && adduser -D chrome
 
 ENTRYPOINT ["/entrypoint.sh"]

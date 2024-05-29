@@ -12,7 +12,7 @@ class YoutubeDlProvider extends BaseProvider
 {
     public function makeArchive(): ?string
     {
-        $path = storage_path('app/archives');
+        $path = storage_path('app/archives/');
 
         if (is_dir($path) === false) {
             mkdir($path);
@@ -39,12 +39,12 @@ class YoutubeDlProvider extends BaseProvider
                 ->downloadPath($path)
                 ->url($this->url));
 
-            if (false === $result instanceof VideoCollection && $result->count() >= 1) {
+            if ($result->count() < 1) {
                 return null;
             }
 
             logger()->debug('Link media archive', $result->toArray());
-            return $result->getVideos()[0]->getFilename();
+            return str_replace($path,"",$result->getVideos()[0]->getFilename());
         } catch (ExecutableNotFoundException $e) {
             throw new \RuntimeException("Unable to create link media archive", 0, $e);
         }
