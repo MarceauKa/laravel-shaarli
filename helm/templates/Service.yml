@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "Shaark.name" . }}-service
+  labels:
+    app: {{ include "Shaark.name" . }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  selector:
+    app: {{ include "Shaark.name" . }}
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

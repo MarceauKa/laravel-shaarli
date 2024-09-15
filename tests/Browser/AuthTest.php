@@ -2,9 +2,9 @@
 
 namespace Tests\Browser;
 
-use App\SecureLogin;
+use App\Models\SecureLogin;
 use App\Services\Shaark\Shaark;
-use App\User;
+use App\Models\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;

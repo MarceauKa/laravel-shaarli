@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Story;
+use App\Models\Story;
 use Illuminate\Http\Request;
 
 class StoryController extends Controller

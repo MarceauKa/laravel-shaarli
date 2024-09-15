@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreChestRequest;
-use App\Chest;
+use App\Models\Chest;
 use App\Http\Resources\PostResource;
-use App\Post;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class ChestController extends Controller

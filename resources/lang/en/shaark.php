@@ -37,6 +37,7 @@ return [
             'title' => 'Archiving',
             'link_archive_pdf' => 'PDF archiving (Web pages to PDF)',
             'node_bin' => 'Node.js binary',
+            'chromium_bin' => "Chromium binary",
             'archive_pdf_width' => 'Page width',
             'archive_pdf_height' => 'Page height',
             'link_archive_media' => 'Media archiving (Youtube, Soundcloud, ...)',

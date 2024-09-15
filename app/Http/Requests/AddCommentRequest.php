@@ -2,8 +2,8 @@
 
 namespace App\Http\Requests;
 
-use App\Comment;
-use App\Post;
+use App\Models\Comment;
+use App\Models\Post;
 use App\Services\Shaark\Shaark;
 use Illuminate\Foundation\Http\FormRequest;
 

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api\Manage;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\LinkArchiveResource;
-use App\Link;
+use App\Models\Link;
 use Illuminate\Http\Request;
 
 class ArchivesController extends Controller

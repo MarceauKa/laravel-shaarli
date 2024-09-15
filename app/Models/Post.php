@@ -114,10 +114,10 @@ class Post extends Model
         // Restrict on card types
         if (count($cards) > 0) {
             $classes = [
-                'link' => 'App\\Link',
-                'chest' => 'App\\Chest',
-                'story' => 'App\\Story',
-                'album' => 'App\\Album',
+                'link' => 'App\\Models\\Link',
+                'chest' => 'App\\Models\\Chest',
+                'story' => 'App\\Models\\Story',
+                'album' => 'App\\Models\\Album',
             ];
 
             $types = collect($cards)

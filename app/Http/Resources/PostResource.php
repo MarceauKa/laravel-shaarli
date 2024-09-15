@@ -2,10 +2,10 @@
 
 namespace App\Http\Resources;
 
-use App\Album;
-use App\Chest;
-use App\Link;
-use App\Story;
+use App\Models\Album;
+use App\Models\Chest;
+use App\Models\Link;
+use App\Models\Story;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class PostResource extends JsonResource

@@ -87,12 +87,16 @@ return [
             'rules' => ['required', 'numeric', 'min:100', 'max:2160']
         ],
         'youtube_dl_bin' => [
-            'default' => '/usr/bin/youtube-dl',
+            'default' => '/usr/bin/yt-dlp',
             'rules' => ['required']
         ],
         'python_bin' => [
             'default' => '/usr/bin/python',
             'rules' => ['required']
+        ],
+        "chromium_bin" => [
+          "default" => '/usr/bin/chromium-browser',
+          "rules" => ['required']
         ],
         'backup_enabled' => [
             'default' => false,

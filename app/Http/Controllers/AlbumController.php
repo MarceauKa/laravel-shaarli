@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Album;
+use App\Models\Album;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use Spatie\MediaLibrary\Models\Media;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class AlbumController extends Controller
 {

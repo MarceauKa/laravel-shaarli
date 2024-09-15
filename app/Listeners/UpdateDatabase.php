@@ -2,8 +2,8 @@
 
 namespace App\Listeners;
 
-use App\User;
-use App\Wall;
+use App\Models\User;
+use App\Models\Wall;
 use Illuminate\Database\Events\MigrationEnded;
 use Illuminate\Support\Facades\DB;
 

@@ -7,7 +7,7 @@
             </h5>
 
             <div class="card-content">
-                <viewer :value="story.content"></viewer>
+                <viewer :initialValue="story.content"></viewer>
             </div>
 
             <p class="card-text mt-1" v-if="story.tags.length > 0">

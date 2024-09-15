@@ -7,14 +7,14 @@ use App\Services\Shaark\Shaark;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Image\Manipulations;
-use Spatie\MediaLibrary\HasMedia\HasMedia;
-use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
-use Spatie\MediaLibrary\Models\Media;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Album extends Model implements HasMedia
 {
     use Postable,
-        HasMediaTrait;
+        InteractsWithMedia;
 
     static public $mimes = [
         'image/jpeg',
@@ -64,14 +64,14 @@ class Album extends Model implements HasMedia
         return true;
     }
 
-    public function registerMediaCollections()
+    public function registerMediaCollections() :void
     {
         $this->addMediaCollection('images')
             ->acceptsMimeTypes(self::$mimes)
             ->useDisk('albums');
     }
 
-    public function registerMediaConversions(Media $media = null)
+    public function registerMediaConversions(Media $media = null) : void
     {
         /** @var Shaark $shaark */
         $shaark = app('shaark');

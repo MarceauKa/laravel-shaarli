@@ -17,7 +17,9 @@ class SecureLogin extends Model
     public $primaryKey = 'token';
     public $incrementing = false;
     protected $keyType = 'string';
-    protected $dates = ['expires_at'];
+    protected $casts = [
+        'expires_at' => 'datetime',
+    ];
 
     public function user(): BelongsTo
     {

@@ -57,9 +57,7 @@ class Link extends Model
     ];
     protected $casts = [
         'is_watched' => 'bool',
-    ];
-    protected $dates = [
-        'http_checked_at',
+        'http_checked_at' => 'datetime',
     ];
     protected $touches = ['post'];
 
@@ -88,7 +86,7 @@ class Link extends Model
             $this->attributes['is_watched'] = false;
         }
 
-        $this->attributes['is_watched'] = in_array($value, ['on', true, '1', 1]) ? true : false;
+        $this->attributes['is_watched'] = in_array($value, ['on', true, '1', 1]);
 
         if ($this->attributes['is_watched'] === false) {
             $this->attributes['http_status'] = null;

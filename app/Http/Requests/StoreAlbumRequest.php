@@ -40,6 +40,9 @@ class StoreAlbumRequest extends FormRequest
                 'nullable',
                 'array',
             ],
+            'images.*.name' => [
+                'required'
+            ],
             'images.*.order' => [
                 'numeric',
                 'min:0',

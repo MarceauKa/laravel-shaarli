@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Comment;
+use App\Models\Comment;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AddCommentRequest;
 use App\Http\Resources\CommentResource;
-use App\Post;
+use App\Models\Post;
 use App\Services\Shaark\Shaark;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;

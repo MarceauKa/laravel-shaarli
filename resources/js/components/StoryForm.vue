@@ -14,7 +14,10 @@
                         height="auto"
                         previewStyle="tab"
                         :options="editor"
-                        v-model="form.content"
+                        @change="parseContent"
+                        :initialValue="this.form.content"
+                        theme="dark"
+                        ref="toastuiEditor"
                 ></editor>
             </div>
 
@@ -117,28 +120,28 @@ export default {
                 useDefaultHTMLSanitizer: true,
                 usageStatistics: false,
                 hideModeSwitch: true,
-                toolbarItems: [
+                toolbarItems: [[
                     'heading',
                     'bold',
                     'italic',
                     'strike',
-                    'divider',
+                    ],[
                     'hr',
                     'quote',
-                    'divider',
+                    ],[
                     'ul',
                     'ol',
                     'task',
                     'indent',
                     'outdent',
-                    'divider',
+                    ],[
                     'table',
                     'image',
                     'link',
-                    'divider',
+                    ],[
                     'code',
                     'codeblock'
-                ]
+                ]]
             }
         }
     },
@@ -147,14 +150,14 @@ export default {
         if (this.story) {
             this.form = this.story;
         }
-
+        let editor = this.$refs.toastuiEditor;
+        editor.invoke("setMarkdown",this.form.content);
         this.startAudit();
     },
 
     methods: {
         submit(then) {
             this.loading = true;
-
             axios.request({
                 method: this.story ? 'PUT' : 'POST',
                 url: this.story ? this.story.url_update : '/api/story',
@@ -180,6 +183,11 @@ export default {
                 this.setHttpError(error);
                 this.toastHttpError(this.__("Can't save"));
             })
+        },
+
+        parseContent(){
+            let html = this.$refs.toastuiEditor.invoke('getMarkdown');
+            this.form.content = html;
         }
     },
 

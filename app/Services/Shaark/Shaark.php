@@ -6,7 +6,7 @@ use App\Services\Shaark\Concerns\ControlsComments;
 use App\Services\Shaark\Concerns\ControlsGlobalPrivacy;
 use App\Services\Shaark\Concerns\ControlsSettings;
 use App\Services\Shaark\Concerns\HandleCustomSettings;
-use App\User;
+use App\Models\User;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Str;
 use Spatie\Valuestore\Valuestore;
@@ -19,7 +19,7 @@ class Shaark
         HandleCustomSettings;
 
     /** @var string VERSION */
-    public const VERSION = '1.2.44';
+    public const VERSION = '2.0.0_alpha';
     /** @var Application $app */
     protected $app;
 

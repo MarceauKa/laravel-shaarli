@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\SecureLogin;
+use App\Models\SecureLogin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;

@@ -6,8 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Manage\StoreUserRequest;
 use App\Http\Requests\Manage\UpdateUserRequest;
 use App\Http\Resources\UserResource;
-use App\Post;
-use App\User;
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Album;
-use App\Chest;
-use App\Link;
-use App\Share;
-use App\Story;
+use App\Models\Album;
+use App\Models\Chest;
+use App\Models\Link;
+use App\Models\Share;
+use App\Models\Story;
 use Illuminate\Http\Request;
 
 class ShareController extends Controller

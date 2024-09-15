@@ -193,6 +193,15 @@
                         @enderror
                     </div>
 
+                    <div class="form-group">
+                        <label for="chromium_bin">{{ __('shaark.settings.archiving.chromium_bin') }}</label>
+                        <input type="text" class="form-control {{ $errors->has('chromium_bin') ? ' is-invalid' : '' }}"
+                               name="chromium_bin" id="chromium_bin" value="{{ old('chromium_bin', $settings['chromium_bin']) }}">
+                        @error('chromium_bin')
+                        <span class="invalid-feedback" role="alert">{{ $message }}</span>
+                        @enderror
+                    </div>
+
                     <div class="row">
                         <div class="col-12 col-sm-6">
                             <div class="form-group">

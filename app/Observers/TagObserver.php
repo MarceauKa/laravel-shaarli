@@ -2,7 +2,7 @@
 
 namespace App\Observers;
 
-use App\Tag;
+use App\Models\Tag;
 use Illuminate\Support\Facades\DB;
 
 class TagObserver

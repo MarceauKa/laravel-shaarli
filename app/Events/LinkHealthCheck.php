@@ -2,7 +2,7 @@
 
 namespace App\Events;
 
-use App\Link;
+use App\Models\Link;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;

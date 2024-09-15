@@ -1,6 +1,6 @@
 <?php
 
-use App\Login;
+use App\Models\Login;
 
 return [
     'throttle' => env('AUTH_CHECKER_THROTTLE', 0),

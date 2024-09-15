@@ -7,7 +7,7 @@ use App\Notifications\CheckEmail;
 use App\Services\LinkArchive\LinkArchive;
 use App\Services\LinkArchive\YoutubeDlProvider;
 use App\Services\Shaark\Shaark;
-use App\User;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Storage;
@@ -57,12 +57,6 @@ class FeaturesController extends Controller
 
         if (empty($result)) {
             return $this->sendError(__('Your node path is unreachable: :path', ['path' => $exec]));
-        }
-
-        $dir = base_path('node_modules/puppeteer/.local-chromium');
-
-        if (false === is_dir($dir)) {
-            return $this->sendError(__('Puppeteer dependencies not installed, run `npm install @nesk/puphpeteer --no-save`'));
         }
 
         try {

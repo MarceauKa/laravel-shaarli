@@ -3,31 +3,26 @@
 namespace App\Services\LinkArchive;
 
 use YoutubeDl\Entity\Video;
+use YoutubeDl\Entity\VideoCollection;
 use YoutubeDl\Exception\ExecutableNotFoundException;
+use YoutubeDl\Options;
 use YoutubeDl\YoutubeDl;
 
 class YoutubeDlProvider extends BaseProvider
 {
     public function makeArchive(): ?string
     {
-        $path = storage_path('app/archives');
+        $path = storage_path('app/archives/');
 
         if (is_dir($path) === false) {
             mkdir($path);
         }
 
         try {
-            $dl = new YoutubeDl([
-                'format' => 'best',
-                'restrict-filenames' => true,
-                'max-downloads' => 1,
-                'no-check-certificate' => true,
-                'output' => md5($this->url) . '.%(ext)s',
-            ]);
+            $dl = new YoutubeDl();
 
             $dl->setPythonPath(app('shaark')->getPythonBin());
             $dl->setBinPath(app('shaark')->getYoutubeDlBin());
-            $dl->setDownloadPath($path);
 
             /*$dl->onProgress(function ($progress) {
                 $percentage = $progress['percentage'];
@@ -35,14 +30,21 @@ class YoutubeDlProvider extends BaseProvider
                 logger()->debug("Percentage: $percentage; Size: $size");
             });*/
 
-            $result = $dl->download($this->url);
+            $result = $dl->download(Options::create()
+                ->format('best')
+                ->restrictFileNames(true)
+                ->maxDownloads(1)
+                ->noCheckCertificate(true)
+                ->output(md5($this->url) . '.%(ext)s')
+                ->downloadPath($path)
+                ->url($this->url));
 
-            if (false === $result instanceof Video) {
+            if ($result->count() < 1) {
                 return null;
             }
 
             logger()->debug('Link media archive', $result->toArray());
-            return $result->getFilename();
+            return str_replace($path,"",$result->getVideos()[0]->getFilename());
         } catch (ExecutableNotFoundException $e) {
             throw new \RuntimeException("Unable to create link media archive", 0, $e);
         }
@@ -61,18 +63,20 @@ class YoutubeDlProvider extends BaseProvider
     public static function test(string $url): bool
     {
         try {
-            $dl = new YoutubeDl([
-                'skip-download' => true,
-                'restrict-filenames' => true,
-                'max-downloads' => 1,
-                'no-check-certificate' => true
-            ]);
+            $dl = new YoutubeDl();
 
+            $dl->setPythonPath(app('shaark')->getPythonBin());
             $dl->setBinPath(app('shaark')->getYoutubeDlBin());
-            $dl->setDownloadPath(storage_path('app/archives'));
-            $result = $dl->download($url);
 
-            if (false === $result instanceof Video) {
+            $result = $dl->download(Options::create()
+                ->skipDownload(true)
+                ->restrictFileNames(true)
+                ->maxDownloads(1)
+                ->noCheckCertificate(true)
+                ->downloadPath(storage_path('app/archives'))
+                ->url($url));
+
+            if (false === $result instanceof VideoCollection && $result->count() >= 1) {
                 return false;
             }
         } catch (ExecutableNotFoundException $e) {

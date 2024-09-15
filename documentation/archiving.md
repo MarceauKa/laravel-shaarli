@@ -7,12 +7,7 @@
 ## PDF Archiving
 
 PDF archiving is used to backup your links as a PDF using printing functionnality of Chromium.  
-We use [Puppeteer](https://github.com/GoogleChrome/puppeteer) to achieve it.
-
-### Installation
-
-Puppeteer is installed as a Composer dependencies but needs Node dependencies that can be installed with:
-`npm install @nesk/puphpeteer --no-save`
+We use [Browsershot](https://github.com/spatie/browsershot) to achieve it.
 
 ### Configuration
 
@@ -21,11 +16,11 @@ You can use the **Check** button to test your configuration.
 
 ## Media Archiving
 
-Media archiving is used to get original media file from Youtube, Soundcloud and [many more](http://ytdl-org.github.io/youtube-dl/supportedsites.html) using [youtube-dl](https://github.com/ytdl-org/youtube-dl/).
+Media archiving is used to get original media file from Youtube, Soundcloud and [many more](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md) using [yt-dlp](https://github.com/yt-dlp/yt-dlp).
 
 ### Installation
 
-You need to install manually [youtube-dl](https://github.com/ytdl-org/youtube-dl/#installation) and have access to Python on your system.
+You need to install manually [yt-dlp](https://github.com/yt-dlp/yt-dlp#installation) and have access to Python on your system.
 
 ### Configuration
 

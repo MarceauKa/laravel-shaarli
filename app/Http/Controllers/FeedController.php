@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\PostResource;
-use App\Post;
+use App\Models\Post;
 use App\Services\Shaark\Shaark;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;

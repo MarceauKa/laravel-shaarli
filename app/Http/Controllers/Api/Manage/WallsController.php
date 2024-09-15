@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api\Manage;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreWallRequest;
-use App\Wall;
+use App\Models\Wall;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 

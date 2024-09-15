@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Manage;
 
 use App\Http\Controllers\Controller;
-use App\Link;
+use App\Models\Link;
 use App\Services\Shaark\Shaark;
 use Illuminate\Support\Facades\Cache;
 

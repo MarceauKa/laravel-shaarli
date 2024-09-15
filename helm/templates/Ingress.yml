@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "Shaark.name" . }}-ingress
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: 1G
+    nginx.org/client-max-body-size: 1G
+    {{- .Values.ingress.annotations | toYaml | indent 4}}
+spec:
+  tls:
+    - hosts:
+        - {{ .Values.ingress.url }}
+      secretName: {{ include "Shaark.name" . }}-secret-tls
+  rules:
+    - host: {{ .Values.ingress.url }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ include "Shaark.name" . }}-service
+                port:
+                  number:  80

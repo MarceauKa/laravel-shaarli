@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreStoryRequest;
 use App\Http\Resources\PostResource;
-use App\Post;
-use App\Story;
+use App\Models\Post;
+use App\Models\Story;
 use Illuminate\Http\Request;
 
 class StoryController extends Controller

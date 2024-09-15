@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Album;
-use App\Chest;
-use App\Link;
-use App\Post;
+use App\Models\Album;
+use App\Models\Chest;
+use App\Models\Link;
+use App\Models\Post;
 use App\Services\Shaark\Shaark;
-use App\Story;
-use App\Tag;
-use App\Wall;
+use App\Models\Story;
+use App\Models\Tag;
+use App\Models\Wall;
 use Illuminate\Http\Request;
 
 class BrowseController extends Controller

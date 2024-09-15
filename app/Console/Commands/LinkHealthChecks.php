@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Events\LinkHealthCheck;
-use App\Link;
+use App\Models\Link;
 use App\Services\Shaark\Shaark;
 use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Collection;

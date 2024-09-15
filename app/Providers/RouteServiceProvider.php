@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\SecureLogin;
+use App\Models\SecureLogin;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
 

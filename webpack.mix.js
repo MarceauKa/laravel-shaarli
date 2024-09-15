@@ -1,10 +1,9 @@
 const mix = require('laravel-mix');
 
-mix.js('resources/js/app.js', 'public/js')
+mix.js('resources/js/app.js', 'public/js').vue()
     .extract([
         'axios',
         'bootstrap',
-        'codemirror',
         'highlight.js',
         'jquery',
         'lodash',
@@ -24,4 +23,6 @@ mix.js('resources/js/app.js', 'public/js')
         'vuedraggable',
     ])
     .sass('resources/sass/app.scss', 'public/css')
+    .options({processCssUrls: false})
+    .copyDirectory("node_modules/@fortawesome/fontawesome-free/webfonts", "public/webfonts")
     .version();

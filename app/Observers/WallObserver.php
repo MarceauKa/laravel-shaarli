@@ -2,7 +2,8 @@
 
 namespace App\Observers;
 
-use App\Wall;
+
+use App\Models\Wall;
 
 class WallObserver
 {

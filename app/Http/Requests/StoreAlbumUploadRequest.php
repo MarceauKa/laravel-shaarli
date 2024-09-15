@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-use App\Album;
+use App\Models\Album;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreAlbumUploadRequest extends FormRequest

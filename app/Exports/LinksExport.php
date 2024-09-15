@@ -2,7 +2,7 @@
 
 namespace App\Exports;
 
-use App\Link;
+use App\Models\Link;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;

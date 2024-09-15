@@ -2,10 +2,10 @@
 
 namespace App\Observers;
 
-use App\Comment;
+use App\Models\Comment;
+use App\Models\User;
 use App\Notifications\NewComment;
 use App\Notifications\NewUnmoderatedComment;
-use App\User;
 
 class CommentObserver
 {

@@ -7,7 +7,7 @@ class LinkArchive
     /** @var array $providers */
     public static $providers = [
         'media' => YoutubeDlProvider::class,
-        'pdf' => PuppeteerProvider::class,
+        'pdf' => BrowsershotProvider::class,
     ];
 
     public static function availableFor(string $url): array

@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Album;
+use App\Models\Album;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreAlbumRequest;
 use App\Http\Requests\StoreAlbumUploadRequest;
 use App\Http\Resources\PostResource;
-use App\Post;
+use App\Models\Post;
 use App\Services\Shaark\Shaark;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;

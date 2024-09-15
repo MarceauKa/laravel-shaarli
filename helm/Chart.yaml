@@ -1,0 +1,9 @@
+apiVersion: v2
+
+name: Shaark
+description: "Shaark is a self-hosted platform to keep and share your content: web links, posts, passwords and pictures."
+
+type: application
+version: 2.0.0-alpha
+
+appVersion: 2.0.0-alpha

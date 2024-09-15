@@ -1,3 +1,5 @@
+import Vue from "vue";
+
 window._ = require('lodash');
 
 try {
@@ -42,10 +44,10 @@ Vue.use(Toasted, {
 import Multiselect from 'vue-multiselect';
 Vue.component('multiselect', Multiselect);
 
-import Editor from '@toast-ui/vue-editor/src/Editor.vue';
+import { Editor } from '@toast-ui/vue-editor'
 Vue.component('editor', Editor);
 
-import Viewer from '@toast-ui/vue-editor/src/Viewer.vue';
+import { Viewer } from '@toast-ui/vue-editor'
 Vue.component('viewer', Viewer);
 
 import { directive as onClickaway } from 'vue-clickaway';

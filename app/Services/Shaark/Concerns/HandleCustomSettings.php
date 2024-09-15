@@ -37,8 +37,9 @@ trait HandleCustomSettings
 
     public function handleCustomBackground($value): void
     {
+        if( $value === null)
+            return;
         $data = (array)json_decode($value);
-
         if ($data['type'] === 'gradient') {
             $this->settings->put('custom_background', json_encode($data));
             return;

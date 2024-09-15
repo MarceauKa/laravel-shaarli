@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "Shaark.name" . }}-deployment
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ include "Shaark.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "Shaark.name" . }}
+    spec:
+      containers:
+        - name: shaark
+          image: {{.Values.deployment.image}}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: env
+              mountPath: /var/www/laravel/.env
+              subPath: .env
+            - name: storage
+              mountPath: /var/www/laravel/storage
+      volumes:
+        - name: env
+          hostPath:
+            path: {{ .Values.deployment.files.env }}
+        - name: storage
+          hostPath:
+            path: {{ .Values.deployment.files.storage }}

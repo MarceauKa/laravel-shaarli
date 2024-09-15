@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Chest;
+use App\Models\Chest;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 

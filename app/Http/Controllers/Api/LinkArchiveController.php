@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Events\LinkArchiveRequested;
 use App\Http\Controllers\Controller;
-use App\Link;
+use App\Models\Link;
 use App\Services\LinkArchive\LinkArchive;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;

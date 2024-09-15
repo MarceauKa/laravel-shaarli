@@ -1,0 +1,17 @@
+nameOverride:
+
+deployment:
+    image:
+    files:
+        # Location of .env file
+        env:
+        # Location of storage folder
+        storage:
+
+ingress:
+    url:
+    #Example
+    # annotations:
+    #    cert-manager.io/issuer: "letsencrypt-prod"
+    #    nginx.ingress.kubernetes.io/ssl-redirect: true
+    annotations:

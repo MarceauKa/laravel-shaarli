@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Chest;
+use App\Models\Chest;
 use Illuminate\Http\Request;
 
 class ChestController extends Controller

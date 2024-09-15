@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Login;
+use App\Models\Login;
 use App\Notifications\SecureLoginCode;
-use App\SecureLogin;
-use App\User;
+use App\Models\SecureLogin;
+use App\Models\User;
 use Illuminate\Auth\Events\Failed;
 use Illuminate\Auth\SessionGuard;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
